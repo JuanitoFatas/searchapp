@@ -138,8 +138,9 @@
 
         <p class="text-muted">
           <small>Authors: <%= article.authors.map(&:full_name).to_sentence %></small> |
-          <small>Published: <%= article.published_on %></small> |
-          <small>Score: <%= article._score %></small>
+          <small>Published: <%= link_to article.published_on, article_path(article._source.id) %></small> |
+          <small>Score: <%= article._score %></small> |
+          <small><%= link_to "Original Article", article._source.url %></small>
         </p>
       </div>
     <% end %>

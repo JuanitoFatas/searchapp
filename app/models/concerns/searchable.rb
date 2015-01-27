@@ -120,7 +120,7 @@ module Searchable
         }
       }
 
-      unless query.blank?
+      if query.present?
         @search_definition[:query] = {
           bool: {
             should: [
